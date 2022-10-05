@@ -1,0 +1,29 @@
+Onion Architecture
+
+===> Domain: Merkezi katmandýr.
+-Entities, Value object, Enumeration, Exceptions (Entity ile ilgili exceptionlar)
+
+===> Repository / Service Interfaces / Core Katmaný (Application)
+-Domain ile iþ katmaný arasýnda soyutlama katmanýdýr.
+-R&S I Katmaný -> Domain katmanýný referans eder.
+-Bu katmanýn amacý veri eriþiminbde gevþek baðlý (loose coupling) bir yaklaþým sergilemesidir.
+-DTO,ViewModel,Mapping,Validators,CQRS Pattern
+
+===> Persistence Katmaný
+Veritabaný operasyonlarýný/veri eriþim mantýðýný yürüten katmandýr.
+Application katmanýndaki repository interfacelerinin concrete nesneleri burada oluþturulacaktýr.
+DbContext,Migrations,configurations,Seeding,Repository Concrete Class
+
+===> Infrastructure Katmaný
+Persistence katmaný ile bütünleþebilen bir katmandýr diyebiliriz. Nihayetinde her ikiside iþ/business katmanýdýr. Sadece Persistence dan farký veritabanýnýn dýþýndaki operasyonlarý/servisleri/iþlemleri yürüttüðümüz katmandýr.
+
+===>Presentation Katmaný
+Kullanýcýnýn uygulamayla iletiþime geçtiði katmandýr.
+Wep App,WEB API,MVC
+
+
+Domain ve Application katmanlarý Core klasörü içerisinde oluþturulur. Çünkü bunlar çekirdek katman olduðu için bu þekilde gelenek oluþturulmuþtur.
+
+Servislerimizi oluþturduðumuz katmanlarýmýz olan infrastructure ve persistence katmanlarý da Infrastructure klasörü içerisinde tanýmlanýr.
+
+Presentation uygulamalarý ise presentation klasörü içerisinde yer alýr. Presentation uygulamalarý class library'den ziyade console,web app, wep api vs. olabilir.
