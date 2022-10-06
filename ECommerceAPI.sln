@@ -22,6 +22,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "X_Explanation", "X_Explanation", "{805BFDD0-17F3-4963-8F27-D926B9EA2512}"
 	ProjectSection(SolutionItems) = preProject
 		OnionArchitecture.txt = OnionArchitecture.txt
+		Information.txt = Information.txt
 	EndProjectSection
 EndProject
 Global

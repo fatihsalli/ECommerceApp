@@ -21,6 +21,7 @@ Persistence katmaný ile bütünleþebilen bir katmandýr diyebiliriz. Nihayetinde he
 Kullanýcýnýn uygulamayla iletiþime geçtiði katmandýr.
 Wep App,WEB API,MVC
 
+Özet
 
 Domain ve Application katmanlarý Core klasörü içerisinde oluþturulur. Çünkü bunlar çekirdek katman olduðu için bu þekilde gelenek oluþturulmuþtur.
 

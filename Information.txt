@@ -1,0 +1,5 @@
+Ioc (Inversion of Control) Container
+
+=> Singleton (Uygulama bazlı tekil nesne oluşturur. Tüm taleplere o nesneyi gönderir.)
+=> Scoped (Her request başına bir nesne üretir ve o request pipeline'nında olan tüm isteklere o nesneyi gönderir.)
+=> Transient (Her request'in her talebine karşılık bir nesne üretir ve gönderir.)
