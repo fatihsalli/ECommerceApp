@@ -1,8 +1,8 @@
-Ioc (Inversion of Control) Container
+=====> Ioc (Inversion of Control) Container <=====
 
-=> Singleton (Uygulama bazlý tekil nesne oluþturur. Tüm taleplere o nesneyi gönderir.)
-=> Scoped (Her request baþýna bir nesne üretir ve o request pipeline'nýnda olan tüm isteklere o nesneyi gönderir.)
-=> Transient (Her request'in her talebine karþýlýk bir nesne üretir ve gönderir.)
+=> Singleton (Uygulama bazlý tekil nesne oluþturur. Tüm taleplere (injection vs.) o nesneyi gönderir.)
+=> Scoped (Her request baþýna bir nesne üretir ve o request pipeline'nýnda olan tüm taleplere (injection vs.) o nesneyi gönderir.)
+=> Transient (Her request'in her talebine (injection vs.) karþýlýk bir nesne üretir ve gönderir.)
 
 Önemli Not!
 IOC Container a ne koyarsak bu projede herhangi bir yerden çaðýrabiliriz. Dbcontext i bu sebeple IOC Containera koyuyoruz ki Applicationdan veya Infrastructure dan ona ulaþabilmek için.
@@ -13,10 +13,15 @@ Generic Repository Design Pattern ile repository oluþturuyoruz. Read ve Write ol
 Not!
 Veritabanýnda sorgular üzerinde çalýþmak için (select,wehere vb.) "IQueryable" seçmek daha doðrudur. "IEnumerable" Inmemoryde çalýþmak için kullanýlýr. List --> IEnumerable
 
+=====> Task <=====
+-Bir iþ yapma sözü. Bir iþin varlýðýný gösteriyor. Ýþin üzerinde sorgulamalar yapmamýzý saðlýyor.
+
+
 
 =====> Araþtýrýlacak Konular <=====
 -IEnumerable ve IQueryable
 -Task,ValueTask ve Asenkron mantýðý (await,async)
 
 
-//5.Video
+
+//7.Video

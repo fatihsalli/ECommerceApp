@@ -33,7 +33,9 @@ namespace ECommerceAPI.Persistence.Repositories
 
         public async Task<T> GetByIdAsync(string id)
         {
-            return await Table.FirstOrDefaultAsync(p=> p.Id==Guid.Parse(id));
+            return await Table.FindAsync(Guid.Parse(id));
+            //Marker pattern yöntemi
+            //return await Table.FirstOrDefaultAsync(p=> p.Id==Guid.Parse(id));
         }
 
         public async Task<T> GetSingleAsync(Expression<Func<T, bool>> method)
