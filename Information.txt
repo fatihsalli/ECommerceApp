@@ -3,3 +3,11 @@ Ioc (Inversion of Control) Container
 => Singleton (Uygulama bazlý tekil nesne oluþturur. Tüm taleplere o nesneyi gönderir.)
 => Scoped (Her request baþýna bir nesne üretir ve o request pipeline'nýnda olan tüm isteklere o nesneyi gönderir.)
 => Transient (Her request'in her talebine karþýlýk bir nesne üretir ve gönderir.)
+
+Önemli Not!
+IOC Container a ne koyarsak bu projede herhangi bir yerden çaðýrabiliriz. Dbcontext i bu sebeple IOC Containera koyuyoruz ki Applicationdan veya Infrastructure dan ona ulaþabilmek için.
+
+Not!
+Generic Repository Design Pattern ile repository oluþturuyoruz. Read ve Write olarak iki farklý inteface daha oluþturuyoruz. Bu ikisinin ayný Interface de yer almasý SOLID (S:Single Responsibility) kurallarýna aykýrýdýr.
+
+//5.Video
