@@ -23,29 +23,52 @@ namespace ECommerceAPI.Persistence.Repositories
         public DbSet<T> Table => _context.Set<T>();
 
         //Alternatif yazma şekli => return anlamına gelir aşağıdakiyle aynı mantıktır.
-        public IQueryable<T> GetAll()
-            => Table;
-
         //public IQueryable<T> GetAll()
-        //{
-        //    return Table;
-        //}
+        //    => Table;
 
-        public async Task<T> GetByIdAsync(string id)
+        //Ef Core Tracking yani dataların takip edilmesini sorgu-read methotları için kapatabilmek adına ayar yapıyoruz. Böylece performansı artırabiliriz.
+        public IQueryable<T> GetAll(bool tracking = true)
         {
-            return await Table.FindAsync(Guid.Parse(id));
+            var query = Table.AsQueryable();
+            if (!tracking)
+            {
+                query= query.AsNoTracking();
+            }
+            return query;
+        }
+
+        public IQueryable<T> GetWhere(Expression<Func<T, bool>> method, bool tracking = true)
+        {
+            var query = Table.Where(method);
+            if (!tracking)
+            {
+                query = query.AsNoTracking();
+            }
+            return query;
+        }
+
+        public async Task<T> GetSingleAsync(Expression<Func<T, bool>> method, bool tracking = true)
+        {
+            var query = Table.AsQueryable();
+            if (!tracking)
+            {
+                query = query.AsNoTracking();
+            }
+            return await query.FirstOrDefaultAsync(method);
+        }
+
+        public async Task<T> GetByIdAsync(string id, bool tracking = true)
+        {
+            var query = Table.AsQueryable();
+            if (!tracking)
+            {
+                query = query.AsNoTracking();
+            }
+            //IQueryable da çalışırken FinsAsync hata verecek bu sebeple Marker pattern yöntemi ile göstereceğiz.
+            //return await query.FindAsync(Guid.Parse(id));
             //Marker pattern yöntemi
-            //return await Table.FirstOrDefaultAsync(p=> p.Id==Guid.Parse(id));
+            return await query.FirstOrDefaultAsync(p => p.Id == Guid.Parse(id));
         }
 
-        public async Task<T> GetSingleAsync(Expression<Func<T, bool>> method)
-        {
-            return await Table.FirstOrDefaultAsync(method);
-        }
-
-        public IQueryable<T> GetWhere(Expression<Func<T, bool>> method)
-        {
-            return Table.Where(method);
-        }
     }
 }

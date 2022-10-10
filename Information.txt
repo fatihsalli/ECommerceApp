@@ -16,11 +16,16 @@ Veritabanýnda sorgular üzerinde çalýþmak için (select,wehere vb.) "IQueryable" s
 =====> Task <=====
 -Bir iþ yapma sözü. Bir iþin varlýðýný gösteriyor. Ýþin üzerinde sorgulamalar yapmamýzý saðlýyor.
 
+=====> EF Core Tracking Performans Optimizasyonu <=====
+Datalarýn çekilirken takip edilmesini saðlayan bir mekanizmadýr.
+
 
 
 =====> Araþtýrýlacak Konular <=====
 -IEnumerable ve IQueryable
 -Task,ValueTask ve Asenkron mantýðý (await,async)
+
+
 
 
 
