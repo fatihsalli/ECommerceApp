@@ -16,8 +16,30 @@ Veritabanýnda sorgular üzerinde çalýþmak için (select,wehere vb.) "IQueryable" s
 =====> Task <=====
 -Bir iþ yapma sözü. Bir iþin varlýðýný gösteriyor. Ýþin üzerinde sorgulamalar yapmamýzý saðlýyor.
 
+------------------------------------------------------------------------------------------------------------------------
 =====> EF Core Tracking Performans Optimizasyonu <=====
-Datalarýn çekilirken takip edilmesini saðlayan bir mekanizmadýr.
+Datalarýn çekilirken takip edilmesini saðlayan bir mekanizmadýr. Repository "Read" ve "Write" olarak ikiye ayýrdýðýmýz için
+sadece Read yapýlacak iþlemlerde Ef Core Tracking takibini devre dýþý býrakabiliriz. Bu bize ek performans getirir. Ancak
+oldu da yapýlan deðiþikliði database'e kaydetmek istedik. EF Core Tracking devre dýþý olduðundan bunu gerçekleþtiremeyiz.
+Bu sebeple sadece ama sadece Read yani okuma,gösterme iþlemi yapýlacak ise devre dýþý býrakabiliriz. Nasýl kullanýyoruz?
+Aþaðýdaki metottaki AsNoTracking() methodu ile devre dýþý býrakabiliyoruz.
+
+    public IQueryable<T> GetWhere(Expression<Func<T, bool>> method, bool tracking = true)
+        {
+            var query = Table.Where(method);
+            if (!tracking)
+            {
+                query = query.AsNoTracking();
+            }
+            return query;
+        }     
+------------------------------------------------------------------------------------------------------------------------
+
+=====> SaveChangesAsync Interceptor <=====
+Interceptor Ýþlemi: Baþlangýcý ve bitiþi belli olan bir iþte araya girmektir.
+Örneðin Insert yapýyoruz. Insert database e gönderilmeden önce araya girerek CreatedDate'ini merkezi bir noktadan 
+veriyoruz.
+
 
 
 
