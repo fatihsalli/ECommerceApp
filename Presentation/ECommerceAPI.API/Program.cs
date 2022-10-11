@@ -29,5 +29,3 @@ app.MapControllers();
 
 app.Run();
 
-
-//4 nolu derste kaldým!!!
