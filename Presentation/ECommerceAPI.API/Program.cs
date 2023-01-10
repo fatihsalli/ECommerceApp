@@ -1,4 +1,9 @@
+using ECommerceAPI.Persistence;
+
 var builder = WebApplication.CreateBuilder(args);
+
+//Extension metot
+builder.Services.AddPersistenceServices();
 
 builder.Services.AddControllers();
 
