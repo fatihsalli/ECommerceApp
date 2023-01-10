@@ -1,4 +1,4 @@
-Onion Architecture
+Onion Architecture (Clean Arch. patternýdýr!)
 
 ===> Çok katmanlý mimariye göre avantajlarý;
 	- Çok katmanlý mimaride merkezde DAL katmaný vardýr. Bu sebeple de verinin BLL (Business) katmanýndan verinin geliþ tarzýna bir baðýmlýlýk oluþmaktadýr. Bu sebeple de Dapper-Postgre yerine yarýn bir gün MongoDB ve MongoDB.Driver a geçmek istediðimizde muazzam bir iþ yükü çýkmaktadýr. Onion architecture da ise merkezde DAL yani Data katmaný yer almamaktadýr.
@@ -16,11 +16,13 @@ Onion Architecture
 ===> Persistence Katmaný
 Veritabaný operasyonlarýný/veri eriþim mantýðýný yürüten katmandýr.
 Application katmanýndaki repository interfacelerinin concrete nesneleri burada oluþturulacaktýr.
-DbContext,Migrations,configurations,Seeding,Repository Concrete Class
+DbContext,Migrations,Configurations,Seeding,Repository Concrete Class
 
 ===> Infrastructure Katmaný
 Persistence katmaný ile bütünleþebilen bir katmandýr diyebiliriz. Nihayetinde her ikiside iþ/business katmanýdýr. Sadece 
 Persistence dan farký veritabanýnýn dýþýndaki operasyonlarý/servisleri/iþlemleri yürüttüðümüz katmandýr.
+Veritabanýndan olan veri eriþimi dýþýndaki tüm servisler bu katmanda inþa edilir.
+Email/Sms Service,Notification,Payment
 
 ===>Presentation Katmaný
 Kullanýcýnýn uygulamayla iletiþime geçtiði katmandýr.
