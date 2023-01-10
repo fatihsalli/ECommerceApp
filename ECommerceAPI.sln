@@ -19,10 +19,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentatio
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ECommerceAPI.API", "Presentation\ECommerceAPI.API\ECommerceAPI.API.csproj", "{DF1A8B23-A148-41D7-86B2-1B4EADE53F61}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "X_Explanation", "X_Explanation", "{805BFDD0-17F3-4963-8F27-D926B9EA2512}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Explanation", "_Explanation", "{805BFDD0-17F3-4963-8F27-D926B9EA2512}"
 	ProjectSection(SolutionItems) = preProject
-		OnionArchitecture.txt = OnionArchitecture.txt
 		Information.txt = Information.txt
+		OnionArchitecture.txt = OnionArchitecture.txt
 	EndProjectSection
 EndProject
 Global
