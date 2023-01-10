@@ -48,7 +48,16 @@ veriyoruz.
 -Task,ValueTask ve Asenkron mantýðý (await,async)
 
 
+=> Portainer
+Port :https://localhost:9443/
+Kullanýcý:admin
+Þifre:Password12345*
 
+=> Postgre
+Kullanýcý: admin
+Þifre: Password12*
+Port : 5432
+Container ismi : ecommercedb
 
 
 //9.Video

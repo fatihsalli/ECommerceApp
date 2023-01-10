@@ -1,12 +1,16 @@
 Onion Architecture
 
-===> Domain: Merkezi katmandýr.
--Entities, Value object, Enumeration, Exceptions (Entity ile ilgili exceptionlar)
+===> Çok katmanlý mimariye göre avantajlarý;
+	- Çok katmanlý mimaride merkezde DAL katmaný vardýr. Bu sebeple de verinin BLL (Business) katmanýndan verinin geliþ tarzýna bir baðýmlýlýk oluþmaktadýr. Bu sebeple de Dapper-Postgre yerine yarýn bir gün MongoDB ve MongoDB.Driver a geçmek istediðimizde muazzam bir iþ yükü çýkmaktadýr. Onion architecture da ise merkezde DAL yani Data katmaný yer almamaktadýr.
+	- Çok katmanlý mimariden farklý olarak gevþek baðýmlýlýk saðlamaktadýr.
 
-===> Repository / Service Interfaces / Core Katmaný (Application)
--Domain ile iþ katmaný arasýnda soyutlama katmanýdýr.
--R&S I Katmaný -> Domain katmanýný referans eder.
--Bu katmanýn amacý veri eriþiminbde gevþek baðlý (loose coupling) bir yaklaþým sergilemesidir.
+===> Domain: Merkezi katmandýr. (Diðer isimleri Domain Entities veya Core)
+-Entities, Value object, Enumeration (Enum), Exceptions (Entity ile ilgili exceptionlar)
+
+===> Repository Interfaces / Service Interfaces / Core Katmaný (Application)
+-Domain ile iþ katmaný (Persistence ve Infrastructure) arasýnda soyutlama katmanýdýr.
+-Application Katmaný -> Domain katmanýný referans eder.
+-Bu katmanýn amacý veri eriþiminde gevþek baðlý (loose coupling) bir yaklaþým sergilemesidir.
 -DTO,ViewModel,Mapping,Validators,CQRS Pattern
 
 ===> Persistence Katmaný
@@ -15,7 +19,8 @@ Application katmanýndaki repository interfacelerinin concrete nesneleri burada o
 DbContext,Migrations,configurations,Seeding,Repository Concrete Class
 
 ===> Infrastructure Katmaný
-Persistence katmaný ile bütünleþebilen bir katmandýr diyebiliriz. Nihayetinde her ikiside iþ/business katmanýdýr. Sadece Persistence dan farký veritabanýnýn dýþýndaki operasyonlarý/servisleri/iþlemleri yürüttüðümüz katmandýr.
+Persistence katmaný ile bütünleþebilen bir katmandýr diyebiliriz. Nihayetinde her ikiside iþ/business katmanýdýr. Sadece 
+Persistence dan farký veritabanýnýn dýþýndaki operasyonlarý/servisleri/iþlemleri yürüttüðümüz katmandýr.
 
 ===>Presentation Katmaný
 Kullanýcýnýn uygulamayla iletiþime geçtiði katmandýr.
