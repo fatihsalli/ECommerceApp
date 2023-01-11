@@ -26,4 +26,8 @@
     <ProjectReference Include="..\..\Core\ECommerceAPI.Application\ECommerceAPI.Application.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Repositories\" />
+  </ItemGroup>
+
 </Project>

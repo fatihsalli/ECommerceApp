@@ -4,17 +4,11 @@
 => Scoped (Her request baþýna bir nesne üretir ve o request pipeline'nýnda olan tüm taleplere (injection vs.) o nesneyi gönderir.)
 => Transient (Her request'in her talebine (injection vs.) karþýlýk bir nesne üretir ve gönderir.)
 
-Önemli Not!
-IOC Container a ne koyarsak bu projede herhangi bir yerden çaðýrabiliriz. Dbcontext i bu sebeple IOC Containera koyuyoruz ki Applicationdan veya Infrastructure dan ona ulaþabilmek için.
-
 Not!
 Generic Repository Design Pattern ile repository oluþturuyoruz. Read ve Write olarak iki farklý inteface daha oluþturuyoruz. Bu ikisinin ayný Interface de yer almasý SOLID (S:Single Responsibility) kurallarýna aykýrýdýr.
 
 Not!
 Veritabanýnda sorgular üzerinde çalýþmak için (select,wehere vb.) "IQueryable" seçmek daha doðrudur. "IEnumerable" Inmemoryde çalýþmak için kullanýlýr. List --> IEnumerable
-
-=====> Task <=====
--Bir iþ yapma sözü. Bir iþin varlýðýný gösteriyor. Ýþin üzerinde sorgulamalar yapmamýzý saðlýyor.
 
 ------------------------------------------------------------------------------------------------------------------------
 =====> EF Core Tracking Performans Optimizasyonu <=====
@@ -40,13 +34,7 @@ Interceptor Ýþlemi: Baþlangýcý ve bitiþi belli olan bir iþte araya girmektir.
 Örneðin Insert yapýyoruz. Insert database e gönderilmeden önce araya girerek CreatedDate'ini merkezi bir noktadan 
 veriyoruz.
 
-
-
-
-=====> Araþtýrýlacak Konular <=====
--IEnumerable ve IQueryable
--Task,ValueTask ve Asenkron mantýðý (await,async)
-
+------------------------------------------------------------------------------------------------------------------------
 
 => Portainer
 Port :https://localhost:9443/
@@ -58,6 +46,3 @@ Kullanýcý: admin
 Þifre: Password12*
 Port : 5432
 Container ismi : ecommercedb
-
-
-//9.Video
