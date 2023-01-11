@@ -8,7 +8,7 @@ Not!
 Generic Repository Design Pattern ile repository oluþturuyoruz. Read ve Write olarak iki farklý inteface daha oluþturuyoruz. Bu ikisinin ayný Interface de yer almasý SOLID (S:Single Responsibility) kurallarýna aykýrýdýr.
 
 Not!
-Veritabanýnda sorgular üzerinde çalýþmak için (select,wehere vb.) "IQueryable" seçmek daha doðrudur. "IEnumerable" Inmemoryde çalýþmak için kullanýlýr. List --> IEnumerable
+Veritabanýnda sorgular üzerinde çalýþmak için (select,where vb.) "IQueryable" seçmek daha doðrudur. "IEnumerable" Inmemoryde çalýþmak için kullanýlýr. List --> IEnumerable
 
 ------------------------------------------------------------------------------------------------------------------------
 =====> EF Core Tracking Performans Optimizasyonu <=====

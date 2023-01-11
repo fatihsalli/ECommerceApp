@@ -21,8 +21,11 @@ namespace ECommerceAPI.API.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            var products=await _productReadRepository.GetAll().ToListAsync();
-            return Ok(products);
+            var product = await _productReadRepository.GetByIdAsync("027455bb-2b8b-4858-9614-0a83bd007867",false);
+            product.Name = "Veli";
+            await _productWriteRepository.SaveAsync();
+
+            return Ok(product);
         }
 
         [HttpGet("{id}")]
