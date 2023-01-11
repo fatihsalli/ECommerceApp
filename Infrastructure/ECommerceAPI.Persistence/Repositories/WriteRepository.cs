@@ -3,11 +3,6 @@ using ECommerceAPI.Domain.Entities.Common;
 using ECommerceAPI.Persistence.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ECommerceAPI.Persistence.Repositories
 {
@@ -23,7 +18,7 @@ namespace ECommerceAPI.Persistence.Repositories
         public async Task<bool> AddAsync(T model)
         {
             EntityEntry<T> entityEntry = await Table.AddAsync(model);
-            return entityEntry.State== EntityState.Added;
+            return entityEntry.State == EntityState.Added;
         }
 
         public async Task<bool> AddRangeAsync(List<T> model)
@@ -34,7 +29,7 @@ namespace ECommerceAPI.Persistence.Repositories
 
         public bool Remove(T model)
         {
-            EntityEntry<T> entityEntry=Table.Remove(model);
+            EntityEntry<T> entityEntry = Table.Remove(model);
             return entityEntry.State == EntityState.Deleted;
         }
 

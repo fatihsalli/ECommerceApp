@@ -2,12 +2,7 @@
 using ECommerceAPI.Domain.Entities.Common;
 using ECommerceAPI.Persistence.Contexts;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ECommerceAPI.Persistence.Repositories
 {
@@ -31,6 +26,6 @@ namespace ECommerceAPI.Persistence.Repositories
             => await Table.FirstOrDefaultAsync(method);
 
         public async Task<T> GetByIdAsync(string id)
-            =>await Table.FirstOrDefaultAsync(data=> data.Id==Guid.Parse(id));
+            => await Table.FirstOrDefaultAsync(data => data.Id == Guid.Parse(id));
     }
 }
