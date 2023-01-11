@@ -46,3 +46,6 @@ Kullanýcý: admin
 Þifre: Password12*
 Port : 5432
 Container ismi : ecommercedb
+
+
+9 nolu videoda kaldýk

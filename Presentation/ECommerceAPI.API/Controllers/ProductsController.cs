@@ -21,11 +21,10 @@ namespace ECommerceAPI.API.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            var product = await _productReadRepository.GetByIdAsync("027455bb-2b8b-4858-9614-0a83bd007867",false);
-            product.Name = "Veli";
+            await _productWriteRepository.AddAsync(new Product() {Name="Test",Price=100,Stock=10 });
             await _productWriteRepository.SaveAsync();
 
-            return Ok(product);
+            return Ok();
         }
 
         [HttpGet("{id}")]
