@@ -48,4 +48,4 @@ Port : 5432
 Container ismi : ecommercedb
 
 
-9 nolu videoda kaldýk
+18 nolu videoda kaldýk

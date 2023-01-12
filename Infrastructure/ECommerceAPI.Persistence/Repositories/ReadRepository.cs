@@ -17,17 +17,17 @@ namespace ECommerceAPI.Persistence.Repositories
         public DbSet<T> Table => _context.Set<T>();
 
         public IQueryable<T> GetAll(bool tracking = true)
-        { 
-            var query=Table.AsQueryable();
+        {
+            var query = Table.AsQueryable();
             if (!tracking)
-                query=query.AsNoTracking();
+                query = query.AsNoTracking();
 
             return query;
         }
 
         public IQueryable<T> GetWhere(Expression<Func<T, bool>> method, bool tracking = true)
         {
-            var query=Table.Where(method);
+            var query = Table.Where(method);
             if (!tracking)
                 query = query.AsNoTracking();
 
@@ -50,7 +50,7 @@ namespace ECommerceAPI.Persistence.Repositories
                 query = query.AsNoTracking();
 
             //IQueryable üzerinde Find metodu olmadığı için bu şekilde ulaştık.
-            return await query.FirstOrDefaultAsync(data=> data.Id==Guid.Parse(id));
+            return await query.FirstOrDefaultAsync(data => data.Id == Guid.Parse(id));
         }
     }
 }
