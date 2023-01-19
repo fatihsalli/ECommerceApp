@@ -47,5 +47,4 @@ Kullanýcý: admin
 Port : 5432
 Container ismi : ecommercedb
 
-
 18 nolu videoda kaldýk
