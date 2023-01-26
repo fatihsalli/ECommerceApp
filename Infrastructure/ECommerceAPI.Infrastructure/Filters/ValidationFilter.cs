@@ -7,6 +7,7 @@ public class ValidationFilter : IAsyncActionFilter
 {
     public async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
     {
+        //Filter ile error mesajlarını alıp geriye döndürüyoruz.
         if (!context.ModelState.IsValid)
         {
             var errors = context.ModelState
