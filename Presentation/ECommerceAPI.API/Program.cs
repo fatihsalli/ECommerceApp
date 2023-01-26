@@ -8,10 +8,10 @@ var builder = WebApplication.CreateBuilder(args);
 //Extension metot
 builder.Services.AddPersistenceServices();
 
-builder.Services.AddControllers(options=> options.Filters.Add<ValidationFilter>())
-    .AddFluentValidation(configuration=>
+builder.Services.AddControllers(options => options.Filters.Add<ValidationFilter>())
+    .AddFluentValidation(configuration =>
         configuration.RegisterValidatorsFromAssemblyContaining<CreateProductValidator>())
-    .ConfigureApiBehaviorOptions(opt=> opt.SuppressModelStateInvalidFilter=true);
+    .ConfigureApiBehaviorOptions(opt => opt.SuppressModelStateInvalidFilter = true);
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -31,4 +31,3 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
-

@@ -1,9 +1,8 @@
-﻿namespace ECommerceAPI.Domain.Entities.Common
+﻿namespace ECommerceAPI.Domain.Entities.Common;
+
+public abstract class BaseEntity
 {
-    public abstract class BaseEntity
-    {
-        public Guid Id { get; set; }
-        public DateTime CreatedDate { get; set; }
-        public DateTime? UpdatedDate { get; set; }
-    }
+    public Guid Id { get; set; }
+    public DateTime CreatedDate { get; set; }
+    public DateTime? UpdatedDate { get; set; }
 }
